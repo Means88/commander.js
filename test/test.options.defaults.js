@@ -24,3 +24,7 @@ program.should.not.have.property('olives');
 program.should.have.property('sauce', true);
 program.should.have.property('crust', 'hand-tossed');
 program.should.have.property('cheese', 'mozzarella');
+
+program.getOption('sauce').should.be.true()
+program.getOption('crust').should.be.equal('hand-tossed');
+program.getOption('cheese').should.be.equal('mozzarella');

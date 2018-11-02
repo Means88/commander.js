@@ -103,6 +103,7 @@ function Command(name) {
   this._allowUnknownOption = false;
   this._args = [];
   this._name = name || '';
+  this._optionMap = {};
 }
 
 /**
@@ -396,7 +397,7 @@ Command.prototype.option = function(flags, description, fn, defaultValue) {
     if (!option.bool) defaultValue = true;
     // preassign only if we have a default
     if (defaultValue !== undefined) {
-      self[name] = defaultValue;
+      self._optionMap[name] = self[name] = defaultValue;
       option.defaultValue = defaultValue;
     }
   }
@@ -416,15 +417,15 @@ Command.prototype.option = function(flags, description, fn, defaultValue) {
     if (typeof self[name] === 'boolean' || typeof self[name] === 'undefined') {
       // if no value, bool true, and we have a default, then use it!
       if (val == null) {
-        self[name] = option.bool
+        self._optionMap[name] = self[name] = option.bool
           ? defaultValue || true
           : false;
       } else {
-        self[name] = val;
+        self._optionMap[name] = self[name] = val;
       }
     } else if (val !== null) {
       // reassign
-      self[name] = val;
+      self._optionMap[name] = self[name] = val;
     }
   });
 
@@ -1152,6 +1153,10 @@ Command.prototype.help = function(cb) {
   this.outputHelp(cb);
   process.exit();
 };
+
+Command.prototype.getOption = function(optionName) {
+  return this._optionMap[optionName];
+}
 
 /**
  * Camel-case the given `flag`

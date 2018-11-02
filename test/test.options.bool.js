@@ -13,3 +13,5 @@ program
 program.parse(['node', 'test', '--pepper']);
 program.pepper.should.be.true();
 program.cheese.should.be.true();
+program.getOption('pepper').should.be.true();
+program.getOption('cheese').should.be.true();

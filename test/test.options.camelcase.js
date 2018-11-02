@@ -25,3 +25,10 @@ program.myFLOAT.should.equal(5.5);
 program.myVeryLongFloat.should.equal(6.5);
 program.myURLCount.should.equal(7.5);
 program.myLongRange.should.eql([1, 5]);
+
+program.getOption('myInt').should.equal(5);
+program.getOption('myNum').should.equal(15.99);
+program.getOption('myFLOAT').should.equal(5.5);
+program.getOption('myVeryLongFloat').should.equal(6.5);
+program.getOption('myURLCount').should.equal(7.5);
+program.getOption('myLongRange').should.eql([1, 5]);

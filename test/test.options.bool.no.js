@@ -13,3 +13,4 @@ program
 program.parse(['node', 'test', '--no-cheese']);
 should.equal(undefined, program.pepper);
 program.cheese.should.be.false();
+program.getOption('cheese').should.be.false();

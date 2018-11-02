@@ -4,7 +4,6 @@
 [![Build Status](https://api.travis-ci.org/tj/commander.js.svg?branch=master)](http://travis-ci.org/tj/commander.js)
 [![NPM Version](http://img.shields.io/npm/v/@means88/commander.svg?style=flat)](https://www.npmjs.org/package/@means88/commander)
 [![NPM Downloads](https://img.shields.io/npm/dm/@means88/commander.svg?style=flat)](https://npmcharts.com/compare/@means88/commander?minimal=true)
-[![Install Size](https://packagephobia.now.sh/badge?p=commander)](https://packagephobia.now.sh/result?p=commander)
 
   The complete solution for [node.js](http://nodejs.org) command-line interfaces, inspired by Ruby's [commander](https://github.com/commander-rb/commander).  
   [API documentation](http://tj.github.com/commander.js/)
@@ -12,7 +11,7 @@
 
 ## Installation
 
-    $ npm install commander --save
+    $ npm install @means88/commander --save
 
 ## Option parsing
 
@@ -25,7 +24,7 @@ Options with commander are defined with the `.option()` method, also serving as 
  * Module dependencies.
  */
 
-var program = require('commander');
+var program = require('@means88/commander');
 
 program
   .version('0.1.0')
@@ -53,7 +52,7 @@ Note that multi-word options starting with `--no` prefix negate the boolean valu
  * Module dependencies.
  */
 
-var program = require('commander');
+var program = require('@means88/commander');
 
 program
   .option('--no-sauce', 'Remove sauce')
@@ -88,7 +87,7 @@ You can attach options to a command.
 ```js
 #!/usr/bin/env node
 
-var program = require('commander');
+var program = require('@means88/commander');
 
 program
   .command('rm <dir>')
@@ -169,7 +168,7 @@ console.log(' drink: %j', program.drink);
  * Module dependencies.
  */
 
-var program = require('commander');
+var program = require('@means88/commander');
 
 program
   .version('0.1.0')
@@ -194,7 +193,7 @@ program.parse(process.argv);
 ```js
 #!/usr/bin/env node
 
-var program = require('commander');
+var program = require('@means88/commander');
 
 program
   .version('0.1.0')
@@ -219,7 +218,7 @@ Angled brackets (e.g. `<cmd>`) indicate required input. Square brackets (e.g. `[
 
 ```js
 // file: ./examples/pm
-var program = require('commander');
+var program = require('@means88/commander');
 
 program
   .version('0.1.0')
@@ -278,7 +277,7 @@ Options:
  * Module dependencies.
  */
 
-var program = require('commander');
+var program = require('@means88/commander');
 
 program
   .version('0.1.0')
@@ -326,7 +325,7 @@ Optional callback cb allows post-processing of help text before it is displayed.
 If you want to display help by default (e.g. if no command was provided), you can use something like:
 
 ```js
-var program = require('commander');
+var program = require('@means88/commander');
 var colors = require('colors');
 
 program
@@ -367,7 +366,7 @@ program.on('command:*', function () {
 ## Examples
 
 ```js
-var program = require('commander');
+var program = require('@means88/commander');
 
 program
   .version('0.1.0')
